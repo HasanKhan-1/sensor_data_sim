@@ -1,11 +1,11 @@
-#ifndef DATA_LOGGER_H
-#define DATA_LOGGER_H
+#ifndef DATA_LOGGER_HPP
+#define DATA_LOGGER_HPP
 
-#include <queue>
+#include <deque>
 #include <mutex>
 #include <atomic>
 
 // Function declaration
-void data_logger(std::queue<double>& buffer, std::mutex& mtx, std::atomic<bool>& run_flag);
+void data_logger(std::deque<double>& buffer, std::mutex& mtx, std::atomic<bool>& run_flag);
 
-#endif // DATA_LOGGER_H
+#endif // DATA_LOGGER_HPP

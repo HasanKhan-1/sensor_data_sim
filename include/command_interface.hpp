@@ -1,11 +1,10 @@
-#ifndef COMMAND_INTERFACE_H
-#define COMMAND_INTERFACE_H
-#include <queue>
+#ifndef COMMAND_INTERFACE_HPP
+#define COMMAND_INTERFACE_HPP
+
+#include <deque>
 #include <mutex>
 #include <atomic>
-#include <thread>
-#include <string>
 
-void command_interface(std::queue<double>& buffer, std::mutex& mutex, std::atomic<bool>& run_flag);
+void command_interface(std::deque<double>& buffer, std::mutex& mtx, std::atomic<bool>& run_flag);
 
-#endif // COMMAND_INTERFACE_H
+#endif // COMMAND_INTERFACE_HPP
