@@ -4,9 +4,9 @@
 #include <chrono>
 
 void data_logger(std::deque<double>& buffer, std::mutex& mtx, std::atomic<bool>& run_flag) {
-    std::ofstream log_file("temperature_log.txt");
+    std::ofstream log_file("sensor_log.txt");
     while (run_flag.load()) {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::this_thread::sleep_for(std::chrono::seconds(2));
         
         std::lock_guard<std::mutex> lock(mtx);
         if (!buffer.empty()) {
